@@ -12,3 +12,6 @@ yarn add -D eslint-plugin-simple-import-sort babel-plugin-module-resolver eslint
 
 # add dev types
 yarn add -D @types/lodash @types/react-native-vector-icons @types/react-redux @types/styled-components @typescript-eslint/eslint-plugin @typescript-eslint/parser redux-devtools-extension
+
+# create project structure
+mkdir src && cd src && mkdir epics images mobile reducers utils && cd mobile && mkdir components navigators pages && cd pages && mkdir shop orders in-store profile
