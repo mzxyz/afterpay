@@ -1,13 +1,13 @@
 import React from 'react';
-import { View } from 'react-native';
 import { Provider } from 'react-redux';
 
 import store from './store';
+import TabBarNavigator from './features/navigators/tabBarNavigators';
 
 const App = () => {
 	return (
 		<Provider store={store}>
-			<View style={{ flex: 1, backgroundColor: 'blue' }} />
+			<TabBarNavigator />
 		</Provider>
 	);
 };

@@ -114,7 +114,6 @@
 				C2D80573D3CFEB0FAA08C53B /* Pods-afterpay-afterpayTests.debug.xcconfig */,
 				D62EE07AB66CFFC618137BAE /* Pods-afterpay-afterpayTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
