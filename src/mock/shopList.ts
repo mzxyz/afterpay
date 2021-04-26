@@ -1,7 +1,8 @@
+import uuid from 'react-native-uuid';
 import { TStoreItem } from "@src/types/shopTypes";
 
-const createStoreItem = (isInStore: boolean, brand: string, imageUrl: string,) => {
-    return {isInStore, imageUrl, brand, isFavorite: false };
+const createStoreItem = (isInStore: boolean, brand: string, imageUrl: string): TStoreItem => {
+    return {id: uuid.v4().toString(), isInStore, imageUrl, brand, isFavorite: false };
 };
 
 const imageUrls = [
@@ -30,11 +31,12 @@ const getRandomStores = (): TStoreItem[] => {
         .map(index => stores[index]);
 };
 
-const createShopItem = (category: string) => {
-    return { category, storeList: getRandomStores()}
+const createShopItem = (category: string, isEmpty = false) => {
+    return { category, storeList: isEmpty ? [] : getRandomStores()}
 }
 
 const shopList = [
+    createShopItem('Favorites', true),
     createShopItem('Recommended For You'),
     createShopItem('Women'),
     createShopItem('Men'),

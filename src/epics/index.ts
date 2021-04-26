@@ -1,7 +1,8 @@
 import { combineEpics } from 'redux-observable';
 
-import updateFavorites from './favorite/updateFavorites';
+import updateFavoritesEpic from './favorite/updateFavoritesEpic';
+import requestShopListEpic from './shop/requestShopListEpic';
 
-const epics = [updateFavorites];
+const epics = [requestShopListEpic, updateFavoritesEpic];
 
 export default combineEpics(...epics);

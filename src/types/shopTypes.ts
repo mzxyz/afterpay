@@ -1,9 +1,9 @@
 export type TStoreItem = {
+	id: string;
 	isInStore: boolean;
 	imageUrl: string;
 	brand: string;
 	isFavorite: boolean;
-	// brandIcon: string;
 };
 
 export type TShopCategory = {

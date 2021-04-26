@@ -5,6 +5,6 @@ const rootReducer = combineReducers({
 	shop,
 });
 
-export type State = ReturnType<typeof rootReducer>;
+export type TState = ReturnType<typeof rootReducer>;
 
 export default rootReducer;

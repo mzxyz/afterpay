@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { TouchableWithoutFeedback } from 'react-native';
+import React from 'react';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import Icon from '../icon-item';
 
 type Props = {
@@ -14,23 +14,13 @@ const FavoriteIcon: React.FC<Props> = ({ isFavorite, onPress }) => {
 	const hightlightColor = '#f88178';
 	const hightlightIcon = 'favorite';
 
-	const [selected, setStatus] = useState(isFavorite);
-	const [name, setName] = useState(isFavorite ? hightlightIcon : primaryIcon);
-	const [color, setColor] = useState(isFavorite ? hightlightColor : primaryColor);
-
-	const onIconPress = () => {
-		if (onPress) {
-			onPress(!selected);
-		}
-		setName(selected ? hightlightIcon : primaryIcon);
-		setColor(selected ? hightlightColor : primaryColor);
-		setStatus(!selected);
-	};
+	const color = isFavorite ? hightlightColor : primaryColor;
+	const iconName = isFavorite ? hightlightIcon : primaryIcon;
 
 	return (
-		<TouchableWithoutFeedback onPress={() => onIconPress()}>
-			<Icon name={name} color={color} size={25} />
-		</TouchableWithoutFeedback>
+		<TouchableOpacity onPress={() => onPress(!isFavorite)}>
+			<Icon name={iconName} color={color} size={25} />
+		</TouchableOpacity>
 	);
 };
 

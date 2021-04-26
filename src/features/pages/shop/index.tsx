@@ -1,23 +1,37 @@
-import React from 'react';
-import { SafeAreaView } from 'react-native';
+import React, { useEffect } from 'react';
+import { ActivityIndicator, SafeAreaView } from 'react-native';
+import {useDispatch} from 'react-redux';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
+import {isEmpty} from 'lodash';
 
 import Icon from '../../components/icon-item';
 import SearchHeader from '../../components/search-header';
 import StoreCard from '../../components/store-card';
-import {Container, HeaderContainer, Title, MoreButton, ListHeader, ListSeparator} from './styles';
-import shopList from '../../../mock/shopList';
 import { TShopCategory } from '../../../types/shopTypes';
+import actionTypes from '../../../actionTypes';
+import { useShopState } from '../../../reducers/selectors';
+import { TStoreItem } from '../../../types/shopTypes';
+import {
+    Container, 
+    StoreListContainer, 
+    IndicatorContainer, 
+    HeaderContainer, 
+    Title, 
+    MoreButton, 
+    ListHeader, 
+    ListSeparator
+} from './styles';
 
 const renderStoreItems = (shopCategpry: TShopCategory) => {
     const {category, storeList} = shopCategpry; 
-    const renderItem = (data) => {
-        const {item} = data;
-        return <StoreCard {...item} />;
+    if (isEmpty(storeList)) return null
+    
+    const renderItem = (data: {item: TStoreItem}) => {
+        return <StoreCard {...data.item} />;
     }
 
     return (
-        <Container key={category}>
+        <StoreListContainer key={category}>
             <HeaderContainer>
                 <Title>{category}</Title>
                 <MoreButton onPress={() => {}}>
@@ -34,20 +48,37 @@ const renderStoreItems = (shopCategpry: TShopCategory) => {
                 ItemSeparatorComponent={() => <ListSeparator />}
                 ListHeaderComponent={() => <ListHeader />}
                 ListFooterComponent={() => <ListSeparator />}
-                keyExtractor={(_, index) => `${category}${index}`}
+                keyExtractor={({id}) => id}
             />
-        </Container>
+        </StoreListContainer>
     );
 }
 
 const ShopPage = () => {
+    const dispatch = useDispatch();
+    const {isLoading, shopList} = useShopState();
+
+    useEffect(() => {
+        dispatch({ type: actionTypes.shopList.requested })
+    }, [])
+
+    const renderLoadingView = () =>  (
+        <IndicatorContainer>
+            <ActivityIndicator />
+        </IndicatorContainer>
+    );
+
+    const renderShopList = () =>  (
+        <ScrollView>
+            {!!shopList && shopList.map((item) => renderStoreItems(item))}
+        </ScrollView>
+    );   
+
     return (
-        <SafeAreaView style={{backgroundColor: 'white'}}>
+        <Container>
             <SearchHeader />
-            <ScrollView style={{marginBottom: 150}}>
-                {shopList.map((item) => renderStoreItems(item))}
-            </ScrollView>
-        </SafeAreaView>
+            {isLoading ? renderLoadingView() : renderShopList()}
+        </Container>
     );
 }
 

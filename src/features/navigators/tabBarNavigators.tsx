@@ -33,7 +33,7 @@ const TabBarNavigator = () => {
 
 	return (
 		<NavigationContainer>
-			<Tab.Navigator initialRouteName="In-Store" tabBar={(props) => <BottomTabBar {...props} />}>
+			<Tab.Navigator initialRouteName="shop" tabBar={(props) => <BottomTabBar {...props} />}>
 				{tabScreens()}
 			</Tab.Navigator>
 		</NavigationContainer>

@@ -1,6 +1,11 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
+    flex: 1;
+    background-color: white;
+`;
+
+export const StoreListContainer = styled.View`
     margin: 15px 0px;
 `;
 
@@ -32,4 +37,10 @@ export const ListSeparator = styled.View`
 export const ListHeader = styled.View`
     flex: 1;
     width: 15px;
+`;
+
+export const IndicatorContainer = styled.View`
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 `;
