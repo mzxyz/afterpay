@@ -12,6 +12,7 @@
     "clean": "watchman watch-del-all; rm -rf ./ios/build; rm -rf $TMPDIR/react-*;rm -rf $TMPDIR/metro-*; rm -rf node_modules/; yarn start -- reset-cache"
   },
   "dependencies": {
+    "@react-native-community/art": "^1.2.0",
     "@react-navigation/bottom-tabs": "^5.11.10",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.4",
@@ -20,6 +21,7 @@
     "ramda": "^0.27.1",
     "react": "17.0.1",
     "react-native": "0.64.0",
+    "react-native-barcode-builder": "^2.0.0",
     "react-native-flipper": "^0.86.0",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-safe-area-context": "^3.2.0",

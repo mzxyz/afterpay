@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import ShopPage from '../pages//shop';
+import InStorePage from '../pages/in-store';
 import BackButton from '../components/back-button/index';
 
 const Stack = createStackNavigator();
@@ -36,8 +37,8 @@ export const OrdersNavigator = () => (
 export const InStoreNavigator = () => (
 	<Stack.Navigator>
 		<Stack.Screen
-			name="InStore"
-			component={ShopPage}
+			name="MY IN-STORE CODE"
+			component={InStorePage}
 		/>
 	</Stack.Navigator>
 );
