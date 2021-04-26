@@ -1,14 +1,14 @@
-export type TShopItem = {
+export type TStoreItem = {
 	isInStore: boolean;
 	imageUrl: string;
 	brand: string;
-	brandIcon: string;
 	isFavorite: boolean;
+	// brandIcon: string;
 };
 
 export type TShopCategory = {
 	category: string;
-	shopItems: TShopItem[];
+	storeList: TStoreItem[];
 };
 
 export type TShopList = {

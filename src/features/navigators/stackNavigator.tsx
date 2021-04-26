@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import ShopPage from '../pages//shop';
+import BackButton from '../components/back-button/index';
 
 const Stack = createStackNavigator();
 
@@ -9,6 +10,7 @@ const customisedOptions = (title: string, iconName: string) => {
 	return {
 		title: '',
 		headerStyle: { shadowColor: 'transparent' },
+		headerLeft: () => <BackButton title={title} iconName={iconName} />,
 	};
 };
 
@@ -17,6 +19,7 @@ export const ShopNavigator = () => (
 		<Stack.Screen
 			name="Shop"
 			component={ShopPage}
+			options={{ header: () => null }}
 		/>
 	</Stack.Navigator>
 );
