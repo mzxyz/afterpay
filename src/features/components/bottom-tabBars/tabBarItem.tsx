@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ContentContainer, ItemContainer, Label } from './styles';
-import { useCompare } from '../../../utils/hook';
 import Icon from '../icon-item';
 
 type Props = {
@@ -10,13 +9,6 @@ type Props = {
 };
 
 const TabBarItem: React.FC<Props> = ({ label, icon, isFocused = false }) => {
-	const isFocusChanged = useCompare(isFocused);
-
-	useEffect(() => {
-		if (isFocusChanged) {
-		}
-	});
-
 	return (
 		<ItemContainer>
 			<Icon name={icon} color={'black'} size={26} />

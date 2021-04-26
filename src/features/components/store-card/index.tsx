@@ -27,6 +27,7 @@ const StoreCard: React.FC<TStoreItem> = (props) => {
             </HeaderContainer>
             <BrandContainer>
                 <Title>{brand}</Title>
+                <Icon source={require('../../../images/brand-icon-2')} />
             </BrandContainer>
         </Container>
     )
