@@ -16,9 +16,16 @@ const shopReducer = (state = defaultState, action: IAction) => {
 			return { ...state, isLoading: true };
 		case actionTypes.shopList.completed:
 		case actionTypes.shopList.failed:
-			return { ...state, ...action.payload, isLoading: false };	
+			return {
+				...state,
+				...action.payload,
+				isLoading: false,
+			};
 		case actionTypes.favorite.changed:
-			return { ...state, ...action.payload};	
+			return {
+				...state,
+				...action.payload,
+			};
 		default:
 			return state;
 	}

@@ -16,4 +16,4 @@ export const useCompare = (value: any) => {
 
 export const useTheme = () => {
 	return useContext(ThemeContext);
-}
+};

@@ -2,7 +2,12 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
-import { ShopNavigator, OrdersNavigator, InStoreNavigator, ProfileNavigator } from './stackNavigator';
+import {
+	ShopNavigator,
+	OrdersNavigator,
+	InStoreNavigator,
+	ProfileNavigator,
+} from './stackNavigator';
 import BottomTabBar from '../components/bottom-tabBars';
 
 const Tab = createBottomTabNavigator();

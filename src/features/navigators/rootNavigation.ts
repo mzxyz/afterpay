@@ -7,9 +7,8 @@ export const navigation = () => {
 	if (isMountedRef.current && navigationRef.current) {
 		// Perform navigation if the app has mounted
 		return navigationRef.current;
-	} else {
-		console.log("the app hasn't mounted");
 	}
+	console.log("the app hasn't mounted");
 };
 
 export const navigate = (name: string, params?: object) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import {ThemeProvider} from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
 import store from './store';
 import TabBarNavigator from './features/navigators/tabBarNavigators';

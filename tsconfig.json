@@ -18,7 +18,6 @@
     "skipLibCheck": false,                     /* Skip type checking of declaration files. */
     "baseUrl": ".",
     "paths": {
-      "@src/*": ["./src/*"],
       "@components/*": ["./src/features/components/*"],
       "@reducers/*": ["./src/reducers/*"],
       "@utils/*": ["./src/utils/*"],

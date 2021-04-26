@@ -11,11 +11,9 @@ type Props = {
 const TabBarItem: React.FC<Props> = ({ label, icon, isFocused = false }) => {
 	return (
 		<ItemContainer>
-			<Icon name={icon} color={'black'} size={26} />
+			<Icon name={icon} color="black" size={26} />
 			<ContentContainer isFocused={isFocused}>
-				<Label isFocused={isFocused}>
-					{label}
-				</Label>
+				<Label isFocused={isFocused}>{label}</Label>
 			</ContentContainer>
 		</ItemContainer>
 	);

@@ -9,7 +9,7 @@ type Props = {
 
 const BackButton: React.FC<Props> = ({ title, iconName }) => (
 	<Container>
-		{!!iconName && <Icon name={iconName} color={'black'} size={35} />}
+		{!!iconName && <Icon name={iconName} color="black" size={35} />}
 		{!!title && <Title>{title}</Title>}
 	</Container>
 );
