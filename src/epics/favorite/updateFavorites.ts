@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 import { get } from 'lodash';
 
 import { TActionsObservable, TStateObservable } from '../types';
-import actionTypes from '@src/actionTypes';
+import actionTypes from '../../actionTypes';
 
 const updateFavoritesEpic = (action$: TActionsObservable, state$: TStateObservable) =>
 	action$.pipe(

@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
 import createDebugger from 'redux-flipper';
-import rootReducer from '@src/reducers';
-import rootEpic from '@src/epics';
+import rootReducer from './reducers';
+import rootEpic from './epics';
 
 const epicMiddleware = createEpicMiddleware();
 // Config for flipper debugging

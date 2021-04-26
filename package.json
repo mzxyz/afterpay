@@ -8,8 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint --fix \"./src/**/*.{ts,tsx}\"",
-    "clean": "watchman watch-del-all && rm -rf node_modules $TMPDIR/metro-* $TMPDIR/haste-map-*",
-    "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=8081'"
+    "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
+    "clean": "watchman watch-del-all; rm -rf ./ios/build; rm -rf $TMPDIR/react-*;rm -rf $TMPDIR/metro-*; rm -rf node_modules/; yarn start -- reset-cache"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^5.11.10",

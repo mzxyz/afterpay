@@ -1,5 +1,5 @@
-import { TShopList } from '@types/shopTypes';
-import actionTypes, { IAction } from '@src/actionTypes';
+import { TShopList } from '../types/shopTypes';
+import actionTypes, { IAction } from '../actionTypes';
 
 export type shopState = TShopList;
 

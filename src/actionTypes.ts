@@ -1,6 +1,6 @@
 import { Action } from 'redux';
 
-import { changedActionTypes, toggledActionTypes } from '@utils/typeConfig';
+import { changedActionTypes, toggledActionTypes } from './utils/typeConfig';
 
 export interface IAction extends Action {
 	type: string;
