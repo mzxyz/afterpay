@@ -1,7 +1,9 @@
 import React from 'react';
+import { SafeAreaView } from 'react-native';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 
 import Icon from '../../components/icon-item';
+import SearchHeader from '../../components/search-header';
 import StoreCard from '../../components/store-card';
 import {Container, HeaderContainer, Title, MoreButton, ListHeader, ListSeparator} from './styles';
 import shopList from '../../../mock/shopList';
@@ -40,9 +42,12 @@ const renderStoreItems = (shopCategpry: TShopCategory) => {
 
 const ShopPage = () => {
     return (
-        <ScrollView style={{ marginTop: 50, backgroundColor: 'white'}}>
-            {shopList.map((item) => renderStoreItems(item))}
-        </ScrollView>
+        <SafeAreaView style={{backgroundColor: 'white'}}>
+            <SearchHeader />
+            <ScrollView style={{marginBottom: 150}}>
+                {shopList.map((item) => renderStoreItems(item))}
+            </ScrollView>
+        </SafeAreaView>
     );
 }
 
