@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Barcode from 'react-native-barcode-builder';
 
-import { useTheme } from '@utils/hook';
 import {
 	StyledScrollView,
 	Container,
@@ -14,6 +13,7 @@ import {
 } from './styles';
 import Button from './components/button';
 import prompts from './prompts';
+import { useTheme } from '../../../utils/hook';
 
 const InStorePage = () => {
 	const [showCode, setShowCode] = useState(false);
