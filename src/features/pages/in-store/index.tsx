@@ -12,26 +12,27 @@ import {
     BarCodeInfoContainer,
 } from './styles';
 import Button from './components/button';
-import Colors from '../../../theme/colors';
 import prompts from './prompts';
+import { useTheme } from '../../../utils/hook';
 
 const InStorePage = () => {
     const [showCode, setShowCode] = useState(false);
+    const {colors} = useTheme();
 
     const renderPaymentButtons = () => (
         <ButtonContainer>
             <Button 
                 title={prompts.ceateBarcode} 
-                color={Colors.tint} 
+                color={colors.accent} 
                 iconName={'cached'} 
                 iconColor={'black'} 
                 onPress={() => setShowCode(true)} 
             />
             <Button 
                 title={prompts.scanQRcode} 
-                titleColor={Colors.blue} 
+                titleColor={colors.blue} 
                 iconName={'qr-code'} 
-                iconColor={Colors.blue} 
+                iconColor={colors.blue} 
                 onPress={() => {}} 
             />
         </ButtonContainer>
@@ -42,7 +43,7 @@ const InStorePage = () => {
             <ButtonContainer>
                 <Button 
                     title={prompts.calculatePayment} 
-                    titleColor={Colors.blue} 
+                    titleColor={colors.blue} 
                     onPress={() => setShowCode(false)} 
                 />
             </ButtonContainer>
@@ -54,7 +55,7 @@ const InStorePage = () => {
                 <StyledText fontSize={13} fontWeight={'600'} marginTop={10}>{'Expires in 09:58'}</StyledText>
                 <Barcode value="Hello World" format="CODE128" />
                 <StyledText fontSize={20} fontWeight={'600'} letterSpacing={3} marginTop={5}>{'82647975'}</StyledText>
-                <StyledText fontSize={13} fontWeight={'600'} marginTop={20} color={Colors.blue}>{prompts.scanQRInstead}</StyledText>
+                <StyledText fontSize={13} fontWeight={'600'} marginTop={20} color={colors.blue}>{prompts.scanQRInstead}</StyledText>
             </BarCodeInfoContainer>
         </>
     );

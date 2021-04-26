@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import Colors from '../../../theme/colors';
 
 export const Container = styled.View`
 	flex: 1;
@@ -14,7 +13,7 @@ export const ItemContainer = styled.View`
 `;
 
 export const ContentContainer = styled.View<{isFocused: boolean}>`
-    background-color: ${({isFocused}) => isFocused ? Colors.tint : 'transparent' };
+    background-color: ${({isFocused, theme}) => isFocused ? theme.colors.accent : 'transparent' };
     border-radius: 5px;
     padding: 5px;
     align-items: center;

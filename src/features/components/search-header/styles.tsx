@@ -3,7 +3,7 @@ import Colors from '../../../theme/colors';
 
 export const Container = styled.View`
     flex-direction: column;
-    background-color: ${Colors.tint};
+    background-color: ${({theme}) => theme.colors.accent};
     margin: 15px;
     margin-top: 0px;
     border-radius: 15px;

@@ -1,6 +1,5 @@
 import {StyleSheet} from 'react-native';
 import styled from 'styled-components/native';
-import Colors from '../../../theme/colors';
 
 export const StyledScrollView = styled.ScrollView`
     flex: 1;
@@ -15,7 +14,7 @@ export const Container = styled.View`
 
 export const TopContainer = styled.View`
     flex-direction: row;
-    background-color: ${Colors.tint};
+    background-color: ${({theme}) => theme.colors.accent};
     justify-content: center;
     padding: 15px;
 `;

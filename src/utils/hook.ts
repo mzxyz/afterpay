@@ -1,4 +1,5 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 
 export const usePrevious = (value: any) => {
 	const ref = useRef();
@@ -12,3 +13,7 @@ export const useCompare = (value: any) => {
 	const prevVal = usePrevious(value);
 	return prevVal !== value;
 };
+
+export const useTheme = () => {
+	return useContext(ThemeContext);
+}
