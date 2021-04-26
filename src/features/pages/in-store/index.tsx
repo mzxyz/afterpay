@@ -27,7 +27,6 @@ const InStorePage = () => {
                 iconColor={'black'} 
                 onPress={() => setShowCode(true)} 
             />
-     
             <Button 
                 title={prompts.scanQRcode} 
                 titleColor={Colors.blue} 
