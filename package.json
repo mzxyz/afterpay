@@ -7,7 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint --fix \"./src/**/*.{ts,tsx}\"",
     "clean": "watchman watch-del-all && rm -rf node_modules $TMPDIR/metro-* $TMPDIR/haste-map-*",
     "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=8081'"
   },
@@ -56,7 +56,9 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^6.0.0",
     "jest": "^26.6.3",
+    "lint-staged": "^10.5.4",
     "metro-react-native-babel-preset": "^0.64.0",
     "react-test-renderer": "17.0.1",
     "redux-devtools-extension": "^2.13.9",
@@ -74,6 +76,18 @@
       "jsx",
       "json",
       "node"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{tsx,ts}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
     ]
   }
 }

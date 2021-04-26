@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import shop from './shopReducers';
 
 const rootReducer = combineReducers({
-    shop
+	shop,
 });
 
 export type State = ReturnType<typeof rootReducer>;

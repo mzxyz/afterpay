@@ -1,9 +1,6 @@
 import { Action } from 'redux';
 
-import {
-	changedActionTypes,
-	toggledActionTypes,
-} from '@utils/typeConfig';
+import { changedActionTypes, toggledActionTypes } from '@utils/typeConfig';
 
 export interface IAction extends Action {
 	type: string;
@@ -13,8 +10,8 @@ export interface IAction extends Action {
 // export type Dispatch = Dispatch<IAction>;
 
 const actionTypes = {
-    // favorite
-    changeFavorite: toggledActionTypes('change favorite'),
+	// favorite
+	changeFavorite: toggledActionTypes('change favorite'),
 	favorite: changedActionTypes('favorite'),
 };
 
