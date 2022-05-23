@@ -1,5 +1,9 @@
 
-### Project Structure
+## Afterpay
+
+This is a demo project for Afterpay app
+
+## Project Structure
 
 ```
 ├── README.md
